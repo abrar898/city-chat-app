@@ -1,0 +1,56 @@
+:root {
+  --bg: #fff;
+  --text: #111;
+  --muted: #6b7280;
+  --card: #f8fafc;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --me: #e6f0ff;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, Arial, sans-serif; background: var(--bg); color: var(--text); }
+
+.auth-container, .chat-layout { height: 100vh; display: grid; place-items: center; }
+
+.card { width: 360px; background: var(--card); padding: 24px; border: 1px solid var(--border); border-radius: 12px; }
+.card h2 { margin: 0 0 12px; }
+.card input, .card select { width: 100%; padding: 10px 12px; margin: 8px 0; border: 1px solid var(--border); border-radius: 8px; }
+.card button { width: 100%; padding: 10px 12px; background: var(--primary); color: #fff; border: 0; border-radius: 8px; cursor: pointer; }
+.error { background: #fee2e2; color: #991b1b; padding: 8px; border-radius: 8px; margin-bottom: 8px; }
+.muted { color: var(--muted); }
+
+.chat-layout { grid-template-columns: 320px 1fr; align-items: stretch; width: 100vw; }
+.sidebar { border-right: 1px solid var(--border); height: 100%; padding: 12px; display: flex; flex-direction: column; }
+.sidebar-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.userlist { padding-top: 8px; overflow: auto; }
+.useritem { width: 100%; border: 1px solid var(--border); background: #fff; display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 10px; margin-bottom: 8px; cursor: pointer; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--card); display: grid; place-items: center; border: 1px solid var(--border); }
+.meta .name { font-weight: 600; }
+.meta .sub { font-size: 12px; color: var(--muted); }
+
+.mainpane { height: 100vh; display: flex; flex-direction: column; }
+.chatwindow { height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
+.chathead { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.messages { padding: 16px; overflow: auto; display: flex; flex-direction: column; gap: 8px; background: #fff; }
+.bubble { align-self: flex-start; background: #f3f4f6; padding: 10px 12px; border-radius: 12px; max-width: 70%; border: 1px solid var(--border); }
+.bubble.me { align-self: flex-end; background: var(--me); }
+.bubble .ts { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+.msginput { border-top: 1px solid var(--border); padding: 10px; display: flex; gap: 8px; }
+.msginput input { flex: 1; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; }
+.msginput .send, .menu .icon, .msginput .icon { background: var(--primary); color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+.msginput .icon { padding: 8px 10px; }
+
+.menu { position: relative; }
+.dropdown { position: absolute; right: 0; top: 36px; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 8px; min-width: 160px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+.dropdown button { width: 100%; background: transparent; color: var(--text); border: none; text-align: left; padding: 8px; border-radius: 6px; cursor: pointer; }
+.dropdown button:hover { background: var(--card); }
+
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.2); display: grid; place-items: center; }
+.modal { background: #fff; padding: 16px; border: 1px solid var(--border); border-radius: 12px; width: 380px; max-height: 80vh; display: grid; gap: 12px; }
+.selectlist { overflow: auto; max-height: 320px; border: 1px solid var(--border); border-radius: 8px; padding: 8px; }
+.row { display: flex; align-items: center; gap: 12px; }
+.gap { gap: 12px; }
+.primary { background: var(--primary); color: #fff; border: 0; padding: 10px 12px; border-radius: 8px; }
+.empty { display: grid; place-items: center; height: 100%; color: var(--muted); }
